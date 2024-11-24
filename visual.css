@@ -1,0 +1,266 @@
+@charset "UTF-8";
+
+*{
+    /*O rapaz fez para tirar as configurações do html para todos os elementos*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Quadro do cenário. O overflow serve para que os elementos que estão animados com a keyframe fique escondido quando sai da div para o body*/
+
+body{
+    background-color: rgb(235, 230, 223);
+}
+
+#cenario{
+    width: 50%;
+    height: 500px;
+    border-width: 0px;
+    border-bottom: 15px green;
+    border-style: ridge;
+    border-radius: 2%;
+    margin: auto;
+    margin-top: 5%;
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom, rgb(77, 2, 106), rgb(0, 229, 255), rgb(255, 187, 0));
+    box-shadow: 5px 5px 20px black;
+}
+
+/*Tem que fazer o cano verde deslizar.*/
+
+.cano{
+    position: absolute;
+    bottom: 0%;
+    animation: pipe 2.5s infinite linear;
+    animation-play-state: running;
+    
+}
+
+@keyframes pipe{
+    from{
+        right:-20%;
+        
+    }
+    to{
+        right: 100%;
+        
+    }
+}
+
+.player{
+    position: absolute;
+    
+    bottom: 0%;
+}
+
+.player_jump{
+    animation: jump 0.9s 1 ease-in-out;
+    animation-play-state: running;
+}
+
+@keyframes jump {
+    0%{
+        bottom: 0%;
+    }
+
+    50%{
+        bottom: 30%;
+    }
+
+    100%{
+        bottom: 0%;
+    }
+    
+}
+
+#nuvens{
+    position: relative;
+    transform: translate(-10%,80%);
+    animation-name: clouds;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    opacity: 85%;
+}
+
+@keyframes clouds {
+    from{
+        transform: translate(-50%,80%);
+    }
+
+    to{
+        transform: translate(200%,80%);
+    }
+
+}
+
+span {
+    display: inline-flex;
+    position: relative;
+    transform: translate(293%, -480%);
+}
+
+span > #pontos, #numeros{
+    font-size: 1em;
+    font-family: fantasy;
+    color: white;
+    padding-left: 10px;
+    text-shadow: 1px 1px 2px black;
+}
+
+#first{
+    width: 30px;
+    position: absolute;
+    transform: translate(900%,75%);
+    opacity: 95%;
+}
+
+#second{
+    width: 30px;
+    position: absolute;
+    transform: translate(1050%,75%);
+    opacity: 95%;
+}
+
+#mensagem{
+    background-color: rgba(255, 255, 255, 0.911);
+    width: 35%;
+    height: 30%;
+    position: absolute;
+    left: 33%;
+    border-radius: 3%;
+    box-shadow: 5px 5px 15px rgba(152, 86, 86, 0.664);
+
+    animation-name: game-over;
+    animation-duration: 4s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-play-state: paused;
+    display: none;
+}
+
+@keyframes game-over {
+    0%{
+        transform: scale(50%);
+    }
+    
+    100%{
+        transform: scale(100%);
+    }
+}
+
+#mensagem > p{
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.5em;
+    padding-top: 15px;
+}
+
+#mensagem > button > a{
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 1.2em;
+    text-align: left;
+    color: rgb(250, 153, 16);
+    text-shadow: 1px 1px 1px rgb(86, 4, 4);
+}
+
+#mensagem > button{
+    width: 35%;
+    height: 25%;
+    background-color: rgba(240, 112, 153, 0.742);
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgb(126, 178, 144);
+}
+
+
+#p{
+position: absolute;
+top: 80%;
+right: 42%;
+transform: rotateY(180deg);
+
+/*Fazer a peach correr*/
+animation-name: run;
+animation-iteration-count: 1;
+animation-timing-function: linear;
+animation-duration: 5s;
+
+}
+
+@keyframes run {
+
+    0%{
+        right: 0%;
+    }
+    100%{
+        right: 42%;
+    }
+    
+}
+
+/*Fazer o mario correr*/
+.run{
+animation-name: mario-run;
+animation-iteration-count: 1;
+animation-timing-function: linear;
+animation-duration: 5s;
+}
+
+@keyframes mario-run {
+    0%{
+        left: 0%;
+    }
+    100%{
+        left: 35%;
+
+    }
+}
+
+.heart{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 67%;
+    right: 53%;
+    left: 39%;
+    z-index: 1;
+    display: none;
+
+    animation-name: show-heart;
+    animation-duration: 4s;
+    animation-timing-function: ease-in;
+}
+
+@keyframes show-heart {
+    0%{
+        width: 50px;
+        height: 50px;
+        top: 10%;
+        left: 45%;
+    }
+    
+    100%{
+        width: 150px;
+        height: 150px;
+    }
+}
+
+#pausa{
+    width: 25px;
+    position: absolute;
+    top: 50%;
+    left: 94%;
+    
+}
+
+#pausa:hover{
+    filter: drop-shadow(1px 2px px rgb(222, 65, 211));
+    cursor: pointer;
+}

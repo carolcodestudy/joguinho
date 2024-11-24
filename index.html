@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt -Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joguinho</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imagens/Gort-Hardware-Gravis-Game-Pad.ico" type="image/x-icon">
+</head>
+<body>
+ <!--O professor pediu para recriar um jogo baseado no vídeo do canal Manual do Dev. Vídeo: Como criar um jogo SIMPLES usando JavaScript e HTML | JavaScript para iniciantes - Tutorial
+ Eu me basiei nos vídeos desse programador e também pesquisei sobre outras funcionalidades em sites-->
+
+ <!--Imagens usadas sem fins lucrativos.-->
+    <div id="cenario">
+
+        <h1>Escolha um jogador</h1>
+        
+            <img src="imagens/andando.gif" alt="mario" id="mario" class="chosen" onclick="Mario()">
+    
+            <span id="m">Mario</span>
+
+
+            <img src="imagens/peach-unscreen.gif" alt="peach" id="peach" class="chosen" onclick="Peach()">
+
+            <span id="p">Peach</span>
+
+    </div>
+
+    <h2 style="text-align: center; font-size: 1em;margin-top: 5%; position: absolute; top: 70%; left: 33%; line-height: 150%;">Imagens usadas sem fins lucrativos. <br> Criador do Mario Bros: Nintendo Entertainment Analysis & Development <br> Jogo inspirado em outras aplicações e em outros conteúdos.</h2>
+
+    <script>
+    
+
+            function Mario(){
+        
+            setTimeout(() => {
+                let sound = new Audio('sons/success-1-6297.mp3')
+                sound.volume = 1
+                sound.play()
+            }, 25); 
+
+            setTimeout(() => {
+                window.location = 'mario.html'
+            }, 3100);
+       }
+
+       function Peach(){
+        
+        setTimeout(() => {
+            let sound = new Audio('sons/success-1-6297.mp3')
+            sound.volume = 1
+            sound.play()
+        }, 25); 
+
+        setTimeout(() => {
+            window.location = 'peach.html'
+        }, 3100);
+   }
+
+    </script>
+
+</body>
+</html>

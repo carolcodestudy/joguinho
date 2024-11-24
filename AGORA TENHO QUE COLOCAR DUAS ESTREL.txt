@@ -1,0 +1,50 @@
+AGORA TENHO QUE COLOCAR DUAS ESTRELINHAS PARA FAZER AS CHANCES DO MARIO. CADA VEZ QUE O PIPE ATINGIR AQUELA POSIÇÃO E O MARIO TAMBÉM VAI PERDER UMA ESTRELINHA
+
+class="uma"
+class="duas"
+
+eu tenho que fazer com que quando o mario perder uma estela ele, continue até perder a outra.
+eu penso em adicionar e remover a classe do pipe e do mário
+
+for (let chances= 2; chances>=2; chances--){
+            //console.log(perdeu);
+            let chances = document.querySelector('.stars')
+            chances.remove('.stars')
+    }
+
+/*if(pipePosition == 89 && marioLeft == 0 ){
+            mario.src = 'andando.gif'
+            pipe.style.Left = '90%'
+        }*/
+    //console.log(loop)
+}, 90);
+//Esse dez é o tempo que a função anônima vai agir.
+
+/*const loop2 = setInterval(()=> {
+    const pipePosition = pipe.offsetLeft;
+    const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '')
+
+    if(pipePosition <= 89 && marioPosition <80){
+        let pipe = document.getElementById("verde")
+        pipe.style.position = 'left'
+        pipe.style.right = '90%'
+
+        let mario = document.querySelector('.mario')
+        mario.src = 'andando.gif'
+        mario.style.width = '115px'
+        mario.style
+    }
+}, 800)*/
+
+
+
+/*const continuar = setInterval(()=> {
+
+    const pipePosition = pipe.offsetLeft;
+    const marioPosition = mario.offsetLeft;
+
+    if(pipePosition == 89 && marioPosition == 0 ){
+        mario.src = 'andando.gif'
+        pipe.style.display = 'none'
+    }
+}, 800)*
